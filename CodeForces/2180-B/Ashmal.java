@@ -1,3 +1,7 @@
+// we will be given the string one by one.
+// comapare the cuurent string with previous one . 
+// we will have two options either we can add the current string at the start of previous string or at the end of previous string
+// we will compare both the strings and take the lexicographically smaller one as our answer.
 import java.util.*;
 public class Ashmal{
 

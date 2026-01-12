@@ -1,3 +1,10 @@
+//in this question we are given the array which repreasent -1 for empty space , we have to replace -1 .
+// replace -1 with such a number that the absolute sum of adjacent numbres in aaray b is minimum . 
+// we will have four cases in that , all the ans depends on first and last digit of arrray .
+// if both first and last are not equal to -1 then we will print the absolute difference of both .
+// if both first and last are equal to -1 then we will replace both with 0 and print 0
+// if first is not equal to -1 and last is equal to -1 then we will replace last with first and print 0
+// if first is equal to -1 and last is not equal to -1 then we will replace first with last and print 0
 import java.util.*;
 public class MinimumAbsoluteSum {
     public static void main(String[] args){
