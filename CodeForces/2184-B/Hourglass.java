@@ -12,7 +12,7 @@ public class Hourglass{
             int remaining=Math.min(s,k);
             int ans =remaining-time;
             if(ans<0) ans=0;
-            System.out.println(ans);
+            System.out.println(ans+" ");
         }
     }
 }
