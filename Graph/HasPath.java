@@ -1,5 +1,5 @@
 import java.util.*;
-public class CreateGraph{
+public class HasPath{
     static class Edge{
         int src;
         int des;
@@ -10,7 +10,19 @@ public class CreateGraph{
             this.w=w;
         }
     }
-
+    public static boolean hasPath(ArrayList<Edge> graph[],int start,int end,boolean[] vis){
+        if(start==end) return true;
+        vis[start]=true;
+        for(int i=0;i<graph[start].size();i++){
+            Edge e =graph[start].get(i);
+            if(!vis[e.des]){
+                if(hasPath(graph,e.des,end,vis)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public static void main(String[] args){
         int V=5;
         ArrayList<Edge>[] graph =new ArrayList[V];
@@ -27,9 +39,6 @@ public class CreateGraph{
         graph[3].add(new Edge(3,1,3));
         graph[3].add(new Edge(3,2,1));
         graph[4].add(new Edge(4,2,2));
-        for(int i=0;i<graph[2].size();i++){
-        Edge e =graph[2].get(i);
-        System.out.println(e.des);
-    }
+        System.out.println(hasPath(graph,0,5,new boolean[V]));
     }
 }
